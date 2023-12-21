@@ -176,6 +176,7 @@ class Expense:
 
 
 FOR ExpenseDatabase Class
+
 The ExpenseDatabase class manages a collection of Expense instances. Here's the breakdown:
 
 ```
