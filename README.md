@@ -1,4 +1,4 @@
-1. PROJECT DESCRIPTION
+# PROJECT DESCRIPTION
 The Expense Tracking System is a Python-based project designed to facilitate the management and tracking of financial expenses. The project adopts object-oriented programming (OOP) principles, consisting of two main classes: Expense and ExpenseDatabase.
 
 THE Expense CLASS 
@@ -33,7 +33,7 @@ str(self): Provides a string representation of the ExpenseDatabase object by con
 A USAGE EXAMPLE
 The project includes an example demonstrating the use of the Expense and ExpenseDatabase classes. This example creates an ExpenseDatabase object, adds expenses, updates an expense, and performs operations such as printing the database, getting expenses by ID or title.
 
-2. HOW TO CLONE
+# HOW TO CLONE
 
 To clone the repository, follow the steps below:
 Open a text editor such as vs code, submlime text, atom, notepad ++ and so on
@@ -45,7 +45,7 @@ git clone https://github.com/Victor-Akinode/expense-tracking-system.git
 or you copy the HTTPS or SSH link to the project by clicking on the code, then choose between the HTTPS or SSH, after that, use the command git clone + the HTTPS or SSH link you just copy and hit enter.
 - The project will be cloned and you'd see the progress on your terminal, you'd get a success response once it is done cloning.
 
-3. HOW TO RUN THE CODE:
+# HOW TO RUN THE CODE:
 To run the code, 
 
 - Navigate to the directory where you have the cloned project
@@ -56,7 +56,58 @@ python3 victor_akinode.py
 
 This script showcases the basic functionalities of the expense tracking system.
 
-4. CODE EXPLANATION
+# THE EXAMPLE:
+This section creates an instance of ExpenseDatabase, adds an expense, updates it, and performs operations like printing the database, getting expenses by ID or title.
+
+The example demonstrates the usage of both the Expense and ExpenseDatabase classes:
+
+- Example usage:
+expense_db = ExpenseDatabase()
+
+- Create an expense
+expense1 = Expense("Groceries", 50.00)
+
+- Add the expense to the database
+expense_db.add_expense(expense1)
+
+- Print the expenses in the database
+print("Expenses in the database:")
+print(expense_db)
+
+- Update the title and amount of the expense
+
+expense1.update(title="Monthly Groceries", amount=60.00)
+
+- Print the updated expense
+
+print("\nUpdated Expense:")
+print(expense1)
+
+- Print the expenses in the database after the update
+print("\nExpenses in the database after update:")
+print(expense_db)
+
+- Get an expense by ID
+expense_id_to_find = expense1.id
+found_expense = expense_db.get_expense_by_id(expense_id_to_find)
+if found_expense:
+    print(f"\nExpense found by ID {expense_id_to_find}:\n{found_expense.to_dict()}")
+else:
+    print(f"\nExpense with ID {expense_id_to_find} not found.")
+
+- Get expenses by title
+title_to_find = "Monthly Groceries"
+matching_expenses = expense_db.get_expenses_by_title(title_to_find)
+if matching_expenses:
+    print(f"\nExpenses found with title '{title_to_find}':")
+    for expense in matching_expenses:
+        print(expense.to_dict())
+else:
+    print(f"\nNo expenses found with title '{title_to_find}'.")
+
+
+
+# CODE EXPLANATION
 Let us break the code down into bits for better comprehenesion:
 
 FOR Expense CLASS
@@ -144,60 +195,11 @@ Dictionary Representation (to_dict): Returns a list of dictionaries, each repres
 String Representation (__str__): Provides a string representation of the ExpenseDatabase object by concatenating the string representations of each expense in the list.
 
 
-THE EXAMPLE:
-The example demonstrates the usage of both the Expense and ExpenseDatabase classes:
-
-# Example usage:
-expense_db = ExpenseDatabase()
-
-# Create an expense
-expense1 = Expense("Groceries", 50.00)
-
-# Add the expense to the database
-expense_db.add_expense(expense1)
-
-# Print the expenses in the database
-print("Expenses in the database:")
-print(expense_db)
-
-# Update the title and amount of the expense
-expense1.update(title="Monthly Groceries", amount=60.00)
-
-# Print the updated expense
-print("\nUpdated Expense:")
-print(expense1)
-
-# Print the expenses in the database after the update
-print("\nExpenses in the database after update:")
-print(expense_db)
-
-# Get an expense by ID
-expense_id_to_find = expense1.id
-found_expense = expense_db.get_expense_by_id(expense_id_to_find)
-if found_expense:
-    print(f"\nExpense found by ID {expense_id_to_find}:\n{found_expense.to_dict()}")
-else:
-    print(f"\nExpense with ID {expense_id_to_find} not found.")
-
-# Get expenses by title
-title_to_find = "Monthly Groceries"
-matching_expenses = expense_db.get_expenses_by_title(title_to_find)
-if matching_expenses:
-    print(f"\nExpenses found with title '{title_to_find}':")
-    for expense in matching_expenses:
-        print(expense.to_dict())
-else:
-    print(f"\nNo expenses found with title '{title_to_find}'.")
-
-
-This section creates an instance of ExpenseDatabase, adds an expense, updates it, and performs operations like printing the database, getting expenses by ID or title. Adjust the example as needed for your specific use case.
-
-
-6. Contributions
+# Contributions
 
 Contributions to this project are welcome! If you have ideas for improvements, new features, or bug fixes, feel free to open an issue or submit a pull request on the GitHub repository.
 
-7. License
+# License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
