@@ -11,10 +11,14 @@ created_at: A timestamp representing the date and time when the expense was crea
 updated_at: A timestamp indicating the last time the expense was updated in UTC.
 
 Methods
-init(self, title, amount): The constructor method initializes the attributes of the Expense class, generating a unique ID and capturing the current UTC time for both creation and update timestamps.
-update(self, title=None, amount=None): This method allows for the dynamic updating of the expense's title and/or amount. The updated_at timestamp is automatically set to the current UTC time whenever an update occurs.
-to_dict(self): Returns a dictionary representation of the expense, encapsulating all attributes.
-str(self): Overrides the default string representation to provide a human-readable format including the expense ID, title, amount, creation timestamp, and last update timestamp.
+
+- init(self, title, amount): The constructor method initializes the attributes of the Expense class, generating a unique ID and capturing the current UTC time for both creation and update timestamps.
+
+- update(self, title=None, amount=None): This method allows for the dynamic updating of the expense's title and/or amount. The updated_at timestamp is automatically set to the current UTC time whenever an update occurs.
+
+- to_dict(self): Returns a dictionary representation of the expense, encapsulating all attributes.
+
+- str(self): Overrides the default string representation to provide a human-readable format including the expense ID, title, amount, creation timestamp, and last update timestamp.
 
 THE ExpenseDatabase CLASS
 
@@ -22,13 +26,14 @@ Attributes
 expenses: A list storing instances of the Expense class.
 
 Methods
-init(self): Initializes the expenses list when a new ExpenseDatabase object is created.
-add_expense(self, expense): Adds an expense to the list of expenses.
-remove_expense(self, expense_id): Removes an expense from the list based on its unique ID.
-get_expense_by_id(self, expense_id): Retrieves an expense by its unique ID, returning None if not found.
-get_expenses_by_title(self, title): Retrieves a list of expenses with matching titles.
-to_dict(self): Returns a list of dictionaries, each representing an expense in the database.
-str(self): Provides a string representation of the ExpenseDatabase object by concatenating the string representations of each expense in the list.
+
+- init(self): Initializes the expenses list when a new ExpenseDatabase object is created.
+- add_expense(self, expense): Adds an expense to the list of expenses.
+- remove_expense(self, expense_id): Removes an expense from the list based on its unique ID.
+- get_expense_by_id(self, expense_id): Retrieves an expense by its unique ID, returning None if not found.
+- get_expenses_by_title(self, title): Retrieves a list of expenses with matching titles.
+- to_dict(self): Returns a list of dictionaries, each representing an expense in the database.
+- str(self): Provides a string representation of the ExpenseDatabase object by concatenating the string representations of each expense in the list.
 
 A USAGE EXAMPLE
 The project includes an example demonstrating the use of the Expense and ExpenseDatabase classes. This example creates an ExpenseDatabase object, adds expenses, updates an expense, and performs operations such as printing the database, getting expenses by ID or title.
@@ -36,10 +41,11 @@ The project includes an example demonstrating the use of the Expense and Expense
 # HOW TO CLONE
 
 To clone the repository, follow the steps below:
-Open a text editor such as vs code, submlime text, atom, notepad ++ and so on
+- Open a text editor such as vs code, submlime text, atom, notepad ++ and so on
 - Open the terminal
 - Navigate to the directory where you want to clone your project or you create new folder in a known directory of yours
 - Clone the GitHub repository to your local machine using the command below:
+  
 ```
 git clone https://github.com/Victor-Akinode/expense-tracking-system.git
 ```
@@ -53,6 +59,7 @@ To run the code,
 - Enter the project folder using this command:
 cd expense-tracking-system
 - Run the example Python script to see the Expense and ExpenseDatabase classes in action using the command below:
+  
 ```
 python3 victor_akinode.py
 ```
