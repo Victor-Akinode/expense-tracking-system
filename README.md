@@ -146,10 +146,13 @@ class Expense:
         return f"Expense ID: {self.id}\nTitle: {self.title}\nAmount: ${self.amount}\nCreated At: {self.created_at}\nLast Updated At: {self.updated_at}"
 
 
-Initialization (__init__): When an instance of the Expense class is created, it generates a unique ID using the uuid module, sets the title and amount, and records the creation timestamp in UTC. The updated_at timestamp is initially set to the creation timestamp.
-Update Method (update): Allows updating the title and/or amount of the expense. The updated_at timestamp is automatically set to the current UTC time whenever an update occurs.
-Dictionary Representation (to_dict): Returns a dictionary representation of the expense with attributes like ID, title, amount, creation timestamp, and last update timestamp.
-String Representation (__str__): Overrides the default string representation to provide a human-readable format with the key details of the expense.
+- Initialization (__init__): When an instance of the Expense class is created, it generates a unique ID using the uuid module, sets the title and amount, and records the creation timestamp in UTC. The updated_at timestamp is initially set to the creation timestamp.
+
+- Update Method (update): Allows updating the title and/or amount of the expense. The updated_at timestamp is automatically set to the current UTC time whenever an update occurs.
+
+- Dictionary Representation (to_dict): Returns a dictionary representation of the expense with attributes like ID, title, amount, creation timestamp, and last update timestamp.
+
+- String Representation (__str__): Overrides the default string representation to provide a human-readable format with the key details of the expense.
 
 
 
@@ -186,13 +189,18 @@ class ExpenseDatabase:
         return "\n".join(str(expense) for expense in self.expenses)
 
 
-Initialization (__init__): Initializes the expenses attribute as an empty list when a new ExpenseDatabase object is created.
-Add Expense Method (add_expense): Adds an expense to the list of expenses.
+- Initialization (__init__): Initializes the expenses attribute as an empty list when a new ExpenseDatabase object is created.
+
+- Add Expense Method (add_expense): Adds an expense to the list of expenses.
 Remove Expense Method (remove_expense): Removes an expense from the list based on its unique ID.
-Get Expense by ID Method (get_expense_by_id): Retrieves an expense by its unique ID, returning None if not found.
-Get Expenses by Title Method (get_expenses_by_title): Retrieves a list of expenses with matching titles.
-Dictionary Representation (to_dict): Returns a list of dictionaries, each representing an expense in the database.
-String Representation (__str__): Provides a string representation of the ExpenseDatabase object by concatenating the string representations of each expense in the list.
+
+- Get Expense by ID Method (get_expense_by_id): Retrieves an expense by its unique ID, returning None if not found.
+
+- Get Expenses by Title Method (get_expenses_by_title): Retrieves a list of expenses with matching titles.
+
+- Dictionary Representation (to_dict): Returns a list of dictionaries, each representing an expense in the database.
+
+- String Representation (__str__): Provides a string representation of the ExpenseDatabase object by concatenating the string representations of each expense in the list.
 
 
 # Contributions
